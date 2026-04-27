@@ -24,9 +24,29 @@ Maior que 40 = Obesidade grau III
 
 */
 
-const categorize = (index) => {};
+const categorize = (index) => {
+   if (index < 18.5) {
+    return "Magreza";
+  } else if (index < 25) {
+    return "Normal";
+  } else if (index < 30) {
+    return "Sobrepeso";
+  } else if (index < 35) {
+    return "Obesidade grau I";
+  } else if (index < 40) {
+    return "obesidade grau II";
+  } else if (index > 40) {
+    return "obesidade grau III";
+  }
+};
 
-const calculate = (weight, height) => {};
+const calculate = (weight, height) => {
+  const w = Number(weight);
+  const h = Number(height);
+
+  const imc = w / (h * h);
+  return imc.toFixed(2);
+};
 
 const printResult = (imc, category) => {
   const result = `Seu índice IMC é ${imc}, considerado ${category}`;

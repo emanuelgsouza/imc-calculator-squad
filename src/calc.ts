@@ -20,20 +20,33 @@ Maior que 40 = Obesidade grau III
 
 */
 
-const categorize = (index: number) => {
+export enum Category {
+  Magreza = "Magreza",
+  Normal = "Normal",
+  Sobrepeso = "Sobrepeso",
+  ObesidadeI = "Obesidade grau I",
+  ObesidadeII = "Obesidade grau II",
+  ObesidadeIII = "Obesidade grau III",
+}
+
+const categorize = (index: number): Category => {
   if (index < 18.5) {
-    return "Magreza";
-  } else if (index < 25) {
-    return "Normal";
-  } else if (index < 30) {
-    return "Sobrepeso";
-  } else if (index < 35) {
-    return "Obesidade grau I";
-  } else if (index < 40) {
-    return "Obesidade grau II";
-  } else if (index > 40) {
-    return "Obesidade grau III";
+    return Category.Magreza;
   }
+  if (index < 25) {
+    return Category.Normal;
+  }
+  if (index < 30) {
+    return Category.Sobrepeso;
+  }
+  if (index < 35) {
+    return Category.ObesidadeI;
+  }
+  if (index < 40) {
+    return Category.ObesidadeII;
+  }
+
+  return Category.ObesidadeIII;
 };
 
 const calculate = (weight: number | string, height: number | string) => {

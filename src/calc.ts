@@ -30,9 +30,9 @@ const categorize = (index: number) => {
   } else if (index < 35) {
     return "Obesidade grau I";
   } else if (index < 40) {
-    return "obesidade grau II";
+    return "Obesidade grau II";
   } else if (index > 40) {
-    return "obesidade grau III";
+    return "Obesidade grau III";
   }
 };
 

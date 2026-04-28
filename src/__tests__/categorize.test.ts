@@ -10,11 +10,11 @@ test.for([
   [24.9, "Normal"],
   [25, "Sobrepeso"],
   [34.999, "Obesidade grau I"],
-  [35, "obesidade grau II"],
-  [39, "obesidade grau II"],
-  [39.9, "obesidade grau II"],
-  [50, "obesidade grau III"],
-  [500, "obesidade grau III"],
+  [35, "Obesidade grau II"],
+  [39, "Obesidade grau II"],
+  [39.9, "Obesidade grau II"],
+  [50, "Obesidade grau III"],
+  [500, "Obesidade grau III"],
 ])("categorize(%i) -> %s", ([index, expected]) => {
   expect(categorize(Number(index))).toBe(expected);
 });

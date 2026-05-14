@@ -1,15 +1,14 @@
 import { useState } from "react";
-import { calculate, categorize, Category } from "./calc";
+import { calculate, categorize } from "./calc";
 
 export function App() {
   const [weight, setWeight] = useState("");
   const [height, setHeight] = useState("");
-  const [imc, setImc] = useState<number>();
-  const [category, setCategory] = useState<Category>();
+  const [imc, setImc] = useState<number | undefined>(undefined);
+  const category = categorize(imc!) // dado computado
 
   const update = () => {
     setImc(Number(calculate(weight, height)));
-    setCategory(categorize(imc!));
   };
 
   return (
@@ -42,7 +41,7 @@ export function App() {
         Calcular IMC
       </button>
       {imc && (
-        <div id="result" className="result">
+        <div id="result" data-testid="result" className="result">
           Seu índice IMC é {imc}, considerado {category}
         </div>
       )}
